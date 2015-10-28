@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3正方体</title>
+    <meta charset="UTF-8">
+    <style>
+        html, body, div, span,
+        h1, h2, h3, h4, h5, h6, p
+        a, img, ol, ul, li
+        {
+            margin:0;padding:0;border:0;outline:0;
+        }
+        #experiment{
+            -webkit-perspective: 800;
+            -webkit-perspective-origin: 50% 50%;
+        }
+        #cube{
+            position: relative;
+            margin:100px auto;
+            height:200px;
+            width:200px;
+            -webkit-transform-style:preserve-3d;
+        }
+        .face{
+            position:absolute;
+            height:160px;
+            width:160px;
+            padding:20px;
+
+            color:#C52CC3;
+            font-weight:bold;
+            font-size:160px;
+            line-height:160px;
+            text-align:center;
+
+            -webkit-transition: -webkit-transform 1s linear;
+        }
+        #face1  {
+            background-color:#06F6CD;
+        }
+        #face2 {
+            background-color: yellow;
+            -webkit-transform-origin:right;
+            -webkit-transform: rotateY(-90deg);
+        }
+        #face3 {
+              background-color:green;
+            -webkit-transform-origin:left;
+            -webkit-transform: rotateY(90deg);
+        }
+        #face4 {
+              background-color:blue;
+            -webkit-transform-origin:top;
+            -webkit-transform: rotateX(-90deg);
+        }
+        #face5 {
+              background-color:red;
+            -webkit-transform-origin:bottom;
+            -webkit-transform: rotateX(90deg);
+        }
+        #face6 {
+              background-color:#756E6E;
+            -webkit-transform: translateZ(-200px);
+        }
+
+        #op{
+            margin:0 auto;
+            font-size:16px;
+            font-weight:bold;
+            width:800px;
+        }
+        #op .range-control{width:721px;}
+    </style>
+
+    <script type="text/javascript">
+        function rotate(){
+            var x = document.getElementById("rotatex").value;
+            var y = document.getElementById("rotatey").value;
+            var z = document.getElementById("rotatez").value;
+            document.getElementById('cube').style.webkitTransform = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
+
+            document.getElementById('degx-span').innerText = x;
+            document.getElementById('degy-span').innerText = y;
+            document.getElementById('degz-span').innerText = z;
+        }
+    </script>
+</head>
+<body>
+<div id="experiment">
+    <div id="cube">
+        <div class="face" id="face1">S</div>
+        <div class="face" id="face2">C</div>
+        <div class="face" id="face3">R</div>
+        <div class="face" id="face4">I</div>
+        <div class="face" id="face5">P</div>
+        <div class="face" id="face6">T</div>
+    </div>
+</div>
+<div id="op">
+    <p>旋转X轴: <span id="degx-span">0</span> 度</p>
+    <input type="range" min="-360" max="360" id="rotatex" value="0" class="range-control" onchange="rotate()" /><br/>
+    <p>旋转Y轴: <span id="degy-span">0</span> 度</p>
+    <input type="range" min="-360" max="360" id="rotatey" value="0" class="range-control" onchange="rotate()" /><br/>
+    <p>旋转Z轴: <span id="degz-span">0</span> 度</p>
+    <input type="range" min="-360" max="360" id="rotatez" value="0" class="range-control" onchange="rotate()" /><br/>
+</div>
+</body>
+</html>
