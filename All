@@ -26,13 +26,11 @@
             height:160px;
             width:160px;
             padding:20px;
-
             color:#C52CC3;
             font-weight:bold;
             font-size:160px;
             line-height:160px;
             text-align:center;
-
             -webkit-transition: -webkit-transform 1s linear;
         }
         #face1  {
@@ -44,7 +42,7 @@
             -webkit-transform: rotateY(-90deg);
         }
         #face3 {
-              background-color:green;
+            background-color:green;
             -webkit-transform-origin:left;
             -webkit-transform: rotateY(90deg);
         }
@@ -54,7 +52,7 @@
             -webkit-transform: rotateX(-90deg);
         }
         #face5 {
-              background-color:red;
+            background-color:red;
             -webkit-transform-origin:bottom;
             -webkit-transform: rotateX(90deg);
         }
@@ -78,7 +76,6 @@
             var y = document.getElementById("rotatey").value;
             var z = document.getElementById("rotatez").value;
             document.getElementById('cube').style.webkitTransform = "rotateX("+x+"deg) rotateY("+y+"deg) rotateZ("+z+"deg)";
-
             document.getElementById('degx-span').innerText = x;
             document.getElementById('degy-span').innerText = y;
             document.getElementById('degz-span').innerText = z;
